@@ -1,122 +1,47 @@
 ---
 title: Introduction
-description: Component Structure
+description: Introduction to the style guide
+icon: CirclePlay
 ---
 
-# Component Structure
+This guide is based on my _little_ experience working on JS/TS projects with different teams, different mentalities, and different experience levels...
 
-how we should structure our components
-so all team members can understand the structure of the components
-minimize the time to understand the component structure
-minimize changes by other team members ...
-clean git history ...
+## Why This Guide?
 
-## RCC
+I made _tons_ of mistakes, and I tried my best to learn from them.
+And listen, I never blamed someone for what they did the first time. **BUT** I _do_ after they've been shown or told the best way to do it and still ignore it 🤷.
+`Basically, they think they're good at something, but they're not.`
 
-### Imports
+In this guide, I'll try to cover the best practices I learned from my own failures, the mistakes I had to fix, and the things I _know_ work for a team _small ones at least_.
+**especially** for teams where people love to reinvent wheels... I mean, they **don't know** how stuff must be done in production-level apps.
 
-```tsx
-// Imports are managed by the "Prettier" extension ...
-// less  thinking less stress 🙂
-```
+I hope this guide helps you out. And hey, if you have any suggestions or think something is wrong, please let me know.
+_so I can tell you why this X decision was made._
 
-### Component `hna lmseggi a m3elem`
+## What's Inside?
 
-```tsx
-// ⬇️ compoent must be clear what it does
-// ex: "Button" is not clear, "FeatureSubmitButton" is clear ...
-// as YOU CAN SEE THIS IS A FUNCTION ok?
-export default function ComponentName({
-  // ⬇️ props must be clear what it does not just "props" | "data" ...
-  title,
-}: Readonly<{
-  title: string; // this mean the in the usage this is required so we dont pass title=""
-}>) {
-  // some stuff ll mention later
+💡 Best practices I wish I had known earlier.
 
-  return <div />;
-}
-```
+📁 Folder structures & naming conventions (trust me, they matter).
+
+🚀 Performance optimizations that _actually_ work (Next.js, React, TailwindCSS, etc.).
+
+🔥 Common pitfalls and how to avoid them (learn from my pain and what I learned from others).
+
+🤝 Team collaboration tips (yes, that means code reviews matter).
+
+_(If you're here to argue about semicolons, var vs const and those type of sh\*t, leave now. You still a dumbass.)_
+
+## Contributing
+
+Got something to add? Found a mistake? Think I missed something?
+
+👉 **Submit a PR or open an issue!**
+
+No enterprise-level ChatGPT text, lol. Just type it **kimma kanet** dude, dw.
+
+Let's make this guide better, together. 🚀
 
 ---
 
-```tsx
-// Imports are managed by the "Prettier" extension ...
-
-// ⬇️ compoent must be clear what it does
-// ex: "Button" is not clear, "FeatureSubmitButton" is clear ...
-// as YOU CAN SEE THIS IS A FUNCTION ok?
-export default function ComponentName({
-  // ⬇️ props must be clear what it does not just "props" | "data" ...
-  title,
-}: Readonly<{
-  title: string; // this mean the in the usage this is required so we dont pass title=""
-}>) {
-  // ⬇️ state must be clear what it does
-
-  // States
-  const [state, setState] = useState<{ SomeType }>({
-    // if states are related just put them in one object ...
-  });
-
-  // ⬇️ Hooks section we ll have stuff like useEffect, useMemo, useCallback, Forms, Translations, ...
-
-  // Hooks
-  const form = useForm();
-  const t = useTranslation();
-  // ... i think u got the idea
-
-  // ⚡ now data part
-  // where we have queries (i highly recommend to not have forms and queries in the same component if the form needs to use the query data)
-  // if you wanna try 😐 go ahead
-
-  // Queries
-  // just query stuff here as you want  (keep in mind useQuery priorities data fetching)
-
-  // ⚡ now if we need a mutation (recomeneded to have this in a separate component if possible)
-
-  // Mutations
-  // your tipical mutation stuff here
-
-  // Handlers
-  // well u know what this is for ...
-
-  //
-  return (
-    // Haaa here must try to not have unwanted Divs ... like a div > div > div and this can be done ewasely with only one div hhhh
-    <div>
-      {/* Here needs to say whats that bc when someone is checking he ll read the this and dosent need to check whats indide */}
-      <div />
-
-      {/* Content section */}
-      <div />
-
-      {/* Footer section */}
-      <div />
-    </div>
-  );
-
-  // like this the others dosent need to read ALL what u did to understand what's going on
-  // and if they need to check they can just open the file and see the structure ONLY
-
-  // you can see ther is what i call VISUAL separation
-  // this is to make the component more readable nothing more or less its easy to read with eyes
-}
-```
-
-### Hooks
-
-```tsx
-import ...
-
-export default function ComponentName() {
-  // Hooks
-  const form = useForm();
-  const t = useTranslation();
-  // ... i think u got the idea
-
-  return <div />;
-}
-```
-
-## RSC
+**Pro tip:** `I fixed my 999+ typos with ChatGPT` 👍

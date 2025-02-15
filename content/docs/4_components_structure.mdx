@@ -1,0 +1,126 @@
+---
+title: Component Structure & UI
+---
+
+# Component Structure
+
+how we should structure our components
+so all team members can understand the structure of the components
+minimize the time to understand the component structure
+minimize changes by other team members ...
+clean git history ...
+
+## RCC
+
+### Imports
+
+```tsx
+// Imports are managed by the "Prettier" extension ...
+// less  thinking less stress 🙂
+```
+
+### Component `hna lmseggi a m3elem`
+
+```tsx
+// ⬇️ compoent must be clear what it does
+// ex: "Button" is not clear, "FeatureSubmitButton" is clear ...
+// as YOU CAN SEE THIS IS A FUNCTION ok?
+export default function ComponentName({
+  // ⬇️ props must be clear what it does not just "props" | "data" ...
+  title,
+}: Readonly<{
+  title: string; // this mean the in the usage this is required so we dont pass title=""
+}>) {
+  // some stuff ll mention later
+
+  return <div />;
+}
+```
+
+---
+
+```tsx
+// Imports are managed by the "Prettier" extension ...
+
+// ⬇️ compoent must be clear what it does
+// ex: "Button" is not clear, "FeatureSubmitButton" is clear ...
+// as YOU CAN SEE THIS IS A FUNCTION ok?
+export default function ComponentName({
+  // ⬇️ props must be clear what it does not just "props" | "data" ...
+  title,
+}: Readonly<{
+  title: string; // this mean the in the usage this is required so we dont pass title=""
+}>) {
+  // ⬇️ state must be clear what it does
+
+  // States
+  const [state, setState] = useState<{ SomeType }>({
+    // if states are related just put them in one object ...
+  });
+
+  // ⬇️ Hooks section we ll have stuff like useEffect, useMemo, useCallback, Forms, Translations, ...
+
+  // Hooks
+  const form = useForm();
+  const t = useTranslation();
+  // ... i think u got the idea
+
+  // ⚡ now data part
+  // where we have queries (i highly recommend to not have forms and queries in the same component if the form needs to use the query data)
+  // if you wanna try 😐 go ahead
+
+  // Queries
+  // just query stuff here as you want  (keep in mind useQuery priorities data fetching)
+
+  // ⚡ now if we need a mutation (recomeneded to have this in a separate component if possible)
+
+  // Mutations
+  // your tipical mutation stuff here
+
+  // Handlers
+  // well u know what this is for ...
+
+  //
+  return (
+    // Haaa here must try to not have unwanted Divs ... like a div > div > div and this can be done ewasely with only one div hhhh
+    <div>
+      {/* Here needs to say whats that bc when someone is checking he ll read the this and dosent need to check whats indide */}
+      <div />
+
+      {/* Content section */}
+      <div />
+
+      {/* Footer section */}
+      <div />
+    </div>
+  );
+
+  // like this the others dosent need to read ALL what u did to understand what's going on
+  // and if they need to check they can just open the file and see the structure ONLY
+
+  // you can see ther is what i call VISUAL separation
+  // this is to make the component more readable nothing more or less its easy to read with eyes
+}
+```
+
+### Hooks
+
+```tsx
+import ...
+
+export default function ComponentName() {
+  // Hooks
+  const form = useForm();
+  const t = useTranslation();
+  // ... i think u got the idea
+
+  return <div />;
+}
+```
+
+## RSC
+
+---
+
+Global state management
+UI libraries

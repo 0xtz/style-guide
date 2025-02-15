@@ -1,0 +1,167 @@
+---
+title: Tooling
+description: Required tools / extentions / settings ...
+---
+
+this page ll say my favorite tools and settings for different tools.
+
+like stuff used in projects like (Supabase, shadcn-ui, other OSS)
+
+## What's Tooling?
+
+You might be wondering what tooling means. If you check out the [Bulletproof React's Project Standards](https://github.com/alan2207/bulletproof-react/blob/master/docs/project-standards.md) it describes tools such as ESLint, Prettier, Husky etc.,
+
+yes some stuff like pre-commits can be done now with CI/CD pipelines ikik _details below_.
+
+## Package manager
+
+I use pnpm. you can use npm or yarn. but pnpm is the best for me.
+
+- [Pnpm](https://pnpm.io/)
+
+## My Favorite Tools
+
+lets start with Vscode the main IDE people uses, if u use NVIM dw just READ.
+
+#### Vscode \*
+
+nothing is wrong with usiong default settings, theme, config etc. this is just personal preference.
+
+but some settings are important to mention.
+
+Eslint, Prettier, Husky, EditorConfig, Better Comments, Error Lens, Tailwind CSS IntelliSense, ES7+, Turbo Console Log, SonarQube for IDE.
+
+step 1: install the above extensions.
+
+step 2: go to settings.json and add the following:
+
+```json
+{
+  // just experiment with it, find what works for you.
+
+  // Recommended settings
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true, // <- thats why you installed prettier extension right?
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.formatOnSaveMode": "modifications"
+  // just open google learn more about it. its free dont be scared. its fun.
+}
+```
+
+step 3: always check project config files.
+
+- .editorconfig
+- .prettierrc
+- .eslintrc
+- tsconfig.json (if you dont find this in the project you are fucked up man 😂)
+- etc
+
+#### Husky \*
+
+Husky is a tool that helps you manage git hooks.
+
+> git hooks?
+
+git hooks are scripts that run before or after events in git.
+
+like pre-commit, pre-push, pre-merge, etc.
+
+ok go google the rest of it.
+
+example lets say you have a pre-commit hook that runs prettier on your code.
+bc some people in the team dosent know what prettier is.
+
+solutions? just force the format under the hood they ll never notice.
+
+```bash
+#! /bin/bash
+
+# this will run prettier on the code ...
+pnpm format
+```
+
+_whats this ? it dosent work on my machine ?_ Dw u ll figure it out. 🙂
+
+#### EditorConfig \*
+
+_learn more_
+
+#### ESLint
+
+Find and fix problmes in your JavaScript code.
+
+#### Prettier
+
+Format your code with ease.
+
+this is a very important tool for teams to use.
+specially if you care for git commits. and clean changes.
+
+#### Tailwind CSS IntelliSense \* `only if u use tailwind`
+
+Intelligent code completion for Tailwind CSS.
+
+#### ES7+ \*
+
+_learn more_
+
+#### Error Lens
+
+Show errors and warnings in the editor.
+
+so you dont need to go build to see the errors.
+
+#### Better Comments \*
+
+for better comments? what do you want me to say more.
+
+#### Pretty TypeScript Errors \*
+
+no one can read the ts errors dude hhh
+so this ll make it easier to read. `just read it pleaes ik you scared of Ts`
+
+#### Turbo Console Log \*
+
+if you are a pro and you debug with console.log u need this.
+
+#### SonarQube for IDE \*
+
+if this show you a yellow squiggle just do what it says.
+u ll learn more with time.
+
+## Why ?
+
+just check open source projects.
+
+like [shadcn-ui](https://github.com/shadcn-ui/ui)
+
+or [supabase](https://github.com/supabase/supabase)
+
+or [vercel](https://github.com/vercel/vercel)
+
+or [nextui](https://github.com/nextui-org/nextui)
+
+or [tailwindcss](https://github.com/tailwindcss/tailwindcss)
+
+---
+
+those are preferences ? No they are not.
+you should use use the ones without an `*` in the name.
+
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- [Husky](https://marketplace.visualstudio.com/items?itemName=typicode.husky)
+- [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+- [Better Comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
+- [Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)
+- [ES7+](https://marketplace.cursorapi.com/items?itemName=dsznajder.es7-react-js-snippets)
+
+_was gonna remove links so u can open google but its alr i did it for u._
+
+---
+
+more tools will be added soon. i think

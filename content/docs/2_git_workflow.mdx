@@ -1,0 +1,33 @@
+---
+title: Git Workflow
+description: Git Workflow is a way to manage your git commits and PRs.
+---
+
+### commit message
+
+[commit message](https://www.conventionalcommits.org/en/v1.0.0/) is something important.
+in a team no one wanna read your commit/PR code ...
+
+i wanna go check the commit message and know what changed. thats it.
+
+never push 100 files in a single commit.
+
+- what if u need to revert it ?
+- what if you need to cherry pick it ?
+
+so split it into smaller commits.
+
+- [commitlint](https://commitlint.js.org/)
+- [commitizen](https://commitizen.github.io/cz-cli/)
+
+> imagine you did a change and some one else comes and for no reason he changed/removed your code in a commit called `fix`, whats your reaction ?
+
+### PRs
+
+if you working in a team you ll create your own branch. `named based on the task / tool ...`
+so you ll go to the `main` branch and create a new branch. from this branch you ll create a PR.
+after you add your clean commit message and push it to the branch.
+
+> make sure you pull the parent branch before creating a PR.
+
+- [PRs](https://github.com/apps/prs)

@@ -2,9 +2,13 @@
 
 ## 1. Development Environment Setup
 
-### 1.1 Required Tools
+### 1.1 Required Tools : `Tooling`
 
 - VSCode as primary IDE
+
+  - extentions.
+  - vscode recommended settings.
+
 - Node.js & npm/yarn/pnpm version requirements
 - Git configuration
 

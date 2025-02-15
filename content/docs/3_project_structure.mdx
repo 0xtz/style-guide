@@ -1,0 +1,68 @@
+---
+title: Project Structure & Conventions
+description: Project Structure & Conventions is a way to manage your project structure and conventions.
+---
+
+Here, I focus only on **Next.js** project structure.
+This is totally based on my own preferences. **`The file structure.`**
+
+---
+
+## Folder Structure
+
+Let's say we need to build a feature called **users**.
+We need:
+
+- A page to **list users**
+- A page to **see user details**
+
+**First, just start on a whiteboard.**
+Understand the needs **ONLY**. Draw a diagram of the feature.
+
+**Then** start coding.
+
+```bash
+|src/
+|--/app
+|  |-/users
+|  |  |_ page.tsx
+|  |  |_ loading.tsx <- preferred to have it bc you don't want users to wait...
+|  |  |_ error.tsx <- if you trust your code, you can remove it. lol `we'll discuss it later`
+|  |  |_/[user_id]
+|  |  |_ page.tsx
+|  |  |_ ... loading, error, not found, etc
+|--/components
+|  |-/ui
+|  |-/common
+|--/lib
+|  |-/users // <- separate lib for each feature, so it's clean and easy to maintain
+|--/utils // <- common utils
+```
+
+See? I didn't start coding yet. I just understood the needs and added the structure.
+
+Now, based on this diagram, we can **start coding, define tables, decide how to fetch data, etc.**
+
+(More about data fetching later.)
+
+## Conventions
+
+- `{...next.js conventions}`
+
+- `/components/common` -> are common components any one can just import and if he wanna add a change or something the other dev can just go to the file and change it, **while** knowing it ll affect all the project.
+
+- `/lib | /features` -> are separated by feature
+
+  - contains utils, hooks?, types, schemas, etc.
+
+- `/public` -> is the folder for the public files, try to not add big files here. `bandwith is expensive`
+
+---
+
+**⚡ Pro tips**:
+
+- Keep it **as simple as possible** you'll be coming back to it every time you need to change something.
+- Don't be afraid to change it. **Stop trying to patch things based on the old structure**—decisions should be made based on the current needs.
+- The **whiteboard is your friend** (not literally, but you get the point).
+- If you need to change something, **just do it**.
+  - But ask yourself first: _Is restructuring the feature **worth it** or not?_
